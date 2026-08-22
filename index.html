@@ -10,17 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800&family=Cairo:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="home-page products-page">
-    
+
+  <body>
+    <!-- زر تغيير اللغة العائم الشفاف -->
     <div class="floating-lang">
-      <button class="lang-toggle" type="button" aria-label="Switch language"><span class="lang-ar">العربية</span><span class="lang-en">English</span></button>
+      <button id="lang-btn" class="lang-toggle">English</button>
     </div>
 
     <main>
       <!-- القسم الرئيسي Hero -->
-      <section class="hero">
+      <section class="hero" data-aos="fade-up" data-aos-duration="800">
         <img class="hero-video" src="cc.png" alt="Heavy Trailers Background" />
         <div class="hero-shade"></div>
         
@@ -29,97 +31,91 @@
             <img class="direct-logo" src="PM-removebg-preview.png" alt="Csparepart logo" />
           </div>
 
-          <h1 data-i18n="heroTitle">WORLD-CLASS HEAVY TRAILER <em>SOLUTIONS</em></h1>
+          <h1 data-i18n="heroTitle">PREMIUM HEAVY TRAILER<br>SPARE PARTS<br><em>BUILT FOR PERFORMANCE</em></h1>
           <p class="hero-lead" data-i18n="heroLead">High-quality heavy trailer spare parts engineered for durability, reliability, and maximum performance across every journey.</p>
           
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact" data-i18n="requestQuote">Request a Quote</a>
-            <a class="btn btn-outline" href="#products-section" data-i18n="exploreProducts">Browse Products &rarr;</a>
+            <a class="btn btn-outline" href="products.html" data-i18n="exploreProducts">Browse Products &rarr;</a>
           </div>
         </div>
         
-        <div class="hero-index"><span>01</span><i></i><span data-i18n="heroIndex">حلول عالمية للمقطورات الثقيلة - قطع غيار متميزة للمقطورات الثقيلة مصممة لأعلى مستويات الأداء</span></div>
+        <div class="hero-index"><span>01</span><i></i><span data-i18n="heroIndex">قطع غيار مقطورات ممتازة</span></div>
       </section>
 
-      <!-- قسم المنتجات والكاتالوج الرئيسي -->
-      <section class="catalog" id="products-section">
-        <div class="shell">
-          <div class="section-head reveal" style="margin-bottom: 2rem;">
-            <div>
-              <p class="mini-label" data-i18n="productEyebrow">OEM-COMPATIBLE PARTS · OMAN</p>
-              <h2 data-i18n="productTitle">The components behind <em>every reliable haul.</em></h2>
-            </div>
-          </div>
-
-          <div class="catalog-tools">
-            <div class="filter-group">
-              <button type="button" class="selected" data-filter="all" data-i18n="allCategories">All Categories</button>
-              <button type="button" data-filter="axles" data-i18n="axles">Axles & Suspension</button>
-              <button type="button" data-filter="brakes" data-i18n="brakes">Braking Systems</button>
-              <button type="button" data-filter="towing" data-i18n="towing">Towing & Coupling</button>
-              <button type="button" data-filter="electrical" data-i18n="electrical">Lighting & Electrical</button>
-            </div>
-            <div class="catalog-search">
-              <input id="catalog-search" type="search" data-i18n-placeholder="productSearchPlaceholder" placeholder="Search OEM code or part name..." />
-            </div>
-          </div>
-
-          <div class="results-label">
-            <span id="product-count">0 products available</span>
-          </div>
-
-          <div class="product-grid" id="product-grid"></div>
-        </div>
-      </section>
-
-      <!-- قسم المصنع والجودة -->
-      <section class="factory-section" id="about">
+      <!-- قسم من نحن والخدمات -->
+      <section class="factory-section" id="about" data-aos="fade-up" data-aos-duration="800">
         <div class="shell factory-grid">
-          <div class="factory-copy reveal">
-            <p class="section-label" data-i18n="factoryLabel">مصنعنا والجودة</p>
-            <h2 data-i18n="factoryTitle">هندسة الثقة في <em>كل مكون.</em></h2>
-            <p data-i18n="factoryText">نوفر قطع غيار عالية الجودة للمقطورات الثقيلة، مصممة لتقديم المتانة والاعتمادية وأعلى مستويات الأداء في جميع ظروف التشغيل.</p>
-            <div class="quality-list">
-              <div><b>ISO</b><span data-i18n="qualityOne">تصنيع عالي الجودة</span></div>
-              <div><b>24/7</b><span data-i18n="qualityTwo">دعم الأساطيل</span></div>
-              <div><b>04</b><span data-i18n="qualityThree">محاور لوجستية رئيسية</span></div>
+          <div class="factory-copy reveal" data-aos="fade-up" data-aos-duration="800">
+            <p class="section-label" data-i18n="servicesLabel">OUR SERVICES / WORKSHOPS & FLEETS</p>
+            <h2 data-i18n="servicesTitle">Our Services for <em>Workshops & Fleets.</em></h2>
+            <p data-i18n="servicesText">Practical sourcing and technical support for workshops, fleet operators, and every trailer that needs to stay moving.</p>
+            <div class="services-extra-grid">
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceOrders">Special Orders & Imports</h3><p data-i18n="serviceOrdersDesc">Rare and special-order parts sourced for your exact requirement.</p></div>
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceMatching">OEM Part Matching</h3><p data-i18n="serviceMatchingDesc">Match the part number and chassis to prevent costly errors.</p></div>
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceContracts">Fleet Supply Contracts</h3><p data-i18n="serviceContractsDesc">Scheduled supply contracts with wholesale pricing.</p></div>
             </div>
-            <a class="text-action" href="#contact" data-i18n="talkEngineering">تحدث إلى فريق الهندسة <b>←</b></a>
+            <a class="text-action" href="#contact" data-i18n="talkEngineering">Talk to our engineering team <b>→</b></a>
           </div>
         </div>
       </section>
 
       <!-- قسم التصنيفات -->
-      <section class="categories" id="categories">
+      <section class="categories" id="categories" data-aos="fade-up" data-aos-duration="800">
         <div class="shell">
-          <div class="section-head reveal">
+          <div class="section-head reveal" data-aos="fade-up" data-aos-duration="800">
             <div>
-              <p class="section-label" data-i18n="categoriesLabel">استكشف التشكيلة</p>
-              <h2 data-i18n="categoriesTitle">كل اتصال.<br /><em>كل كيلومتر.</em></h2>
+              <p class="section-label" data-i18n="categoriesLabel">EXPLORE THE RANGE</p>
+              <h2 data-i18n="categoriesTitle">Every connection.<br /><em>Every kilometre.</em></h2>
             </div>
-            <p data-i18n="categoriesCopy">قطع غيار أصلية وإرشادات تقنية لإبقاء الأسطول جاهزاً للطريق.</p>
+            <p data-i18n="categoriesCopy">Original-quality parts and technical guidance to keep trailers ready for the road.</p>
           </div>
           <div class="category-grid">
-            <a class="category-card tow reveal" href="#products-section"><span class="card-number">01</span><h3 data-i18n="catTowing">القطر والوصلات</h3><p data-i18n="catTowingDesc">أعمدة الهبوط، المسامير والوصلات</p><span class="card-arrow">←</span></a>
-            <a class="category-card axle reveal" href="#products-section"><span class="card-number">02</span><h3 data-i18n="catAxles">المحاور والتعليق</h3><p data-i18n="catAxlesDesc">تجميعات المحاور، الزمبركات وأقراص الهواء</p><span class="card-arrow">←</span></a>
-            <a class="category-card brake reveal" href="#products-section"><span class="card-number">03</span><h3 data-i18n="catBrakes">أنظمة الفرامل</h3><p data-i18n="catBrakesDesc">الطبولات، الغرف، الصمامات وأجزاء ABS</p><span class="card-arrow">←</span></a>
-            <a class="category-card electrical reveal" href="#products-section"><span class="card-number">04</span><h3 data-i18n="catElectrical">الإضاءة والكهرباء</h3><p data-i18n="catElectricalDesc">إضاءات LED، الضفائر والمقابس</p><span class="card-arrow">←</span></a>
+            <a class="category-card tow reveal" href="products.html?category=towing" data-aos="fade-up" data-aos-duration="800"><span class="card-number">01</span><h3 data-i18n="catTowing">Towing & Coupling</h3><p data-i18n="catTowingDesc">Landing gear, kingpins & couplers</p><span class="card-arrow">←</span></a>
+            <a class="category-card axle reveal" href="products.html?category=axles" data-aos="fade-up" data-aos-duration="800"><span class="card-number">02</span><h3 data-i18n="catAxles">Axles & Suspension</h3><p data-i18n="catAxlesDesc">Axle assemblies, leaf springs & air bags</p><span class="card-arrow">←</span></a>
+            <a class="category-card brake reveal" href="products.html?category=brakes" data-aos="fade-up" data-aos-duration="800"><span class="card-number">03</span><h3 data-i18n="catBrakes">Braking Systems</h3><p data-i18n="catBrakesDesc">Drums, chambers, valves & ABS parts</p><span class="card-arrow">←</span></a>
+            <a class="category-card electrical reveal" href="products.html?category=electrical" data-aos="fade-up" data-aos-duration="800"><span class="card-number">04</span><h3 data-i18n="catElectrical">Lighting & Electrical</h3><p data-i18n="catElectricalDesc">LED lights, harnesses & plugs</p><span class="card-arrow">←</span></a>
           </div>
         </div>
       </section>
 
-      <!-- قسم التواصل (مربوط برابط Formspree الخاص بك) -->
-      <section class="contact-section" id="contact">
-        <div class="shell contact-grid">
-          <div class="contact-copy reveal">
-            <p class="section-label" data-i18n="contactLabel">دعنا نبقيك في الحركة</p>
-            <h2 data-i18n="contactTitle">القطعة المناسبة تبدأ بـ <em>محادثة حقيقية.</em></h2>
+      <!-- قسم لماذا تختارنا -->
+      <section class="advantages-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="shell">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="800"><div><p class="section-label" data-i18n="whyLabel">WHY CHOOSE US / THE CSPAREPART DIFFERENCE</p><h2 data-i18n="whyTitle">Built around <em>your uptime.</em></h2></div></div>
+          <div class="advantages-grid">
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>01</b><h3 data-i18n="whyOne">Guaranteed OEM Quality</h3><p data-i18n="whyOneDesc">Factory-specification compatibility</p></article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>02</b><h3 data-i18n="whyTwo">Wholesale Pricing</h3><p data-i18n="whyTwoDesc">Competitive prices for workshops and fleets</p></article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>03</b><h3 data-i18n="whyThree">Fast Delivery & Custom Orders</h3><p data-i18n="whyThreeDesc">Fast sourcing for special requirements</p></article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>04</b><h3 data-i18n="whyFour">Expert Technical Guidance</h3><p data-i18n="whyFourDesc">Pre-purchase compatibility support</p></article>
           </div>
-          <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mvkpgggg" method="POST">
-            <label><span data-i18n="formName">الاسم الكامل / الشركة</span><input required name="name" data-i18n-placeholder="formNamePlaceholder" placeholder="اسمك أو شركتك" /></label>
-            <label><span data-i18n="formEmail">البريد الإلكتروني</span><input required name="email" type="email" data-i18n-placeholder="formEmailPlaceholder" placeholder="name@company.com" /></label>
-            <label><span data-i18n="formRequest">ما الذي تحتاجه؟</span><textarea required name="message" rows="4" data-i18n-placeholder="formRequestPlaceholder" placeholder="رقم القطعة، المنتج أو متطلبات الأسطول..."></textarea></label>
-            <button class="btn btn-primary" type="submit"><span data-i18n="sendButton">إرسال الرسالة</span> <b data-i18n="arrowDir">←</b></button>
+        </div>
+      </section>
+
+      <!-- قسم خطوات الطلب -->
+      <section class="ordering-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="shell">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="800"><div><p class="section-label" data-i18n="howLabel">HOW ORDERING WORKS / THREE SIMPLE STEPS</p><h2 data-i18n="howTitle">From part number to <em>road-ready.</em></h2></div></div>
+          <div class="ordering-grid">
+            <article class="ordering-step"><b>01</b><h3 data-i18n="howOne">Send Part Name or OEM Number</h3><p data-i18n="howOneDesc">Send the part name or OEM number</p></article>
+            <article class="ordering-step"><b>02</b><h3 data-i18n="howTwo">Get Instant Price Quote & Compatibility Check</h3><p data-i18n="howTwoDesc">Receive a quick quote and compatibility confirmation</p></article>
+            <article class="ordering-step"><b>03</b><h3 data-i18n="howThree">Fast Dispatch & Delivery Across Oman</h3><p data-i18n="howThreeDesc">Fast dispatch with delivery across Oman</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم التواصل -->
+      <section class="contact-section" id="contact" data-aos="fade-up" data-aos-duration="800">
+        <div class="shell contact-grid">
+          <div class="contact-copy reveal" data-aos="fade-up" data-aos-duration="800">
+            <p class="section-label" data-i18n="contactLabel">LET'S KEEP YOU MOVING</p>
+            <h2 data-i18n="contactTitle">The right part starts with a <em>real conversation.</em></h2>
+          </div>
+          <form class="contact-form reveal" id="contact-form" data-aos="fade-up" data-aos-duration="800" action="https://formspree.io/f/mvkpgggg" method="POST">
+            <label><span data-i18n="formName">Full Name / Company</span><input required name="name" data-i18n-placeholder="formNamePlaceholder" placeholder="Your name or company" /></label>
+            <label><span data-i18n="formEmail">Email</span><input required name="email" type="email" data-i18n-placeholder="formEmailPlaceholder" placeholder="name@company.com" /></label>
+            <label><span data-i18n="formRequest">What do you need?</span><textarea required name="message" rows="4" data-i18n-placeholder="formRequestPlaceholder" placeholder="Part number, product or trailer requirement..."></textarea></label>
+            <button class="btn btn-primary" type="submit"><span data-i18n="sendButton">Send Request</span> <b data-i18n="arrowDir">→</b></button>
             <p class="form-status" role="status"></p>
           </form>
         </div>
@@ -132,31 +128,29 @@
         <div class="footer-brand">
           <div class="brand">
             <img src="logo.png" alt="Csparepart logo" />
-            <span class="brand-text"><strong>CSPAREPART</strong><small data-i18n="brandSub">سلطنة عمان</small></span>
+            <span class="brand-text"><strong>CSPAREPART</strong><small data-i18n="brandSub">SULTANATE OF OMAN</small></span>
           </div>
-          <p data-i18n="footerIntro">قطع غيار مقطورات ثقيلة ممتازة لصناعة النقل في عمان.</p>
+          <p data-i18n="footerIntro">Premium heavy trailer spare parts for the transport industry.</p>
         </div>
         <div>
-          <h3 data-i18n="quickLinks">روابط سريعة</h3>
-          <a href="#top" data-i18n="navHome">الرئيسية</a>
-          <a href="#about" data-i18n="navAbout">من نحن</a>
-          <a href="#products-section" data-i18n="navProducts">المنتجات</a>
-          <a href="#contact" data-i18n="navContact">اتصل بنا</a>
+          <h3 data-i18n="quickLinks">Quick Links</h3>
+          <a href="#top" data-i18n="navHome">Home</a>
+          <a href="#about" data-i18n="navAbout">About Us</a>
+          <a href="products.html" data-i18n="navProducts">Products</a>
+          <a href="#contact" data-i18n="navContact">Contact Us</a>
         </div>
         <div>
-          <h3 data-i18n="contactLabel">دعنا نبقيك في الحركة</h3>
+          <h3 data-i18n="contactLabel">LET'S KEEP YOU MOVING</h3>
           <a href="mailto:info@csparepart.om">info@csparepart.om</a>
+          <a href="tel:+96800000000">+968 0000 0000</a>
+          <a href="https://wa.me/96800000000">WhatsApp</a>
+          <a href="https://maps.google.com/?q=Muscat%2C+Oman" target="_blank" rel="noopener">Muscat, Oman</a>
         </div>
-        <small data-i18n="copyright">حقوق النشر © 2026 Csparepart. جميع الحقوق محفوظة.</small>
+        <small data-i18n="copyright">Copyright © 2026 Csparepart. All Rights Reserved.</small>
       </div>
     </footer>
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
