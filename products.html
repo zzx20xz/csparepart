@@ -4,36 +4,167 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>كتالوج المنتجات | Csparepart</title>
+
+  <!-- أيقونة الشعار في التبويب -->
+  <link rel="icon" type="image/png" href="logo.png">
+
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- خط Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       الخلفية الأصلية الداكنة
+       ========================================== */
+    body {
+      background-color: #0f172a !important;
+      color: #f8fafc !important;
+      font-family: 'Cairo', sans-serif !important;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* زر تغيير اللغة - تصميم شفاف */
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      color: #f8fafc !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle:hover {
+      background: rgba(255, 91, 36, 0.15) !important;
+      border-color: rgba(255, 91, 36, 0.4) !important;
+      color: #ffffff !important;
+    }
+
+    /* أزرار الفلترة - تصميم زجاجي */
+    .filter-group button {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.04) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      color: #94a3b8 !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-group button:hover,
+    .filter-group button[data-filter="all"],
+    .filter-group button.active {
+      background: rgba(255, 91, 36, 0.15) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 91, 36, 0.5) !important;
+      box-shadow: 0 0 15px rgba(255, 91, 36, 0.2) !important;
+    }
+
+    /* ==========================================
+       بطاقات المنتجات الزجاجية الشفافة
+       ========================================== */
+    #product-grid > div,
+    .product-card {
+      background: rgba(255, 255, 255, 0.03) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 16px !important;
+      padding: 18px !important;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      outline: none !important;
+    }
+
+    /* إزالة الإطار البرتقالي المحدد ومراعاة التأشير والضغط */
+    #product-grid > div:hover,
+    #product-grid > div:focus,
+    #product-grid > div:active,
+    .product-card:hover,
+    .product-card:focus,
+    .product-card:active {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+      transform: translateY(-5px) !important;
+      outline: none !important;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* زر الطلب الشفاف */
+    #product-grid button,
+    #product-grid .order-button,
+    #product-grid a.btn,
+    .product-card button {
+      background: rgba(255, 255, 255, 0.06) !important;
+      backdrop-filter: blur(5px) !important;
+      color: #f8fafc !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 8px !important;
+      padding: 7px 16px !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+    }
+
+    /* تفاعل زر الطلب */
+    #product-grid button:hover,
+    #product-grid .order-button:hover,
+    .product-card button:hover {
+      background: rgba(255, 91, 36, 0.25) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 91, 36, 0.6) !important;
+      box-shadow: 0 0 12px rgba(255, 91, 36, 0.3) !important;
+    }
+
+    /* لون السعر والعناوين بـ الأصفر الذهبي */
+    #product-grid b,
+    #product-grid .price,
+    .product-bottom b,
+    #product-grid [class*="price"] {
+      color: #e5a93c !important;
+      font-weight: 700 !important;
+    }
+  </style>
 </head>
-<body style="background-color: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 20px;">
+<body>
 
   <!-- زر تغيير اللغة -->
   <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
-    <button class="lang-toggle" style="background: #0284c7; color: #fff; border: 1px solid #0284c7; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+    <button class="lang-toggle">
       English / العربية
     </button>
   </div>
 
   <main style="max-width: 1200px; margin: 60px auto 0 auto;">
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #334155; padding-bottom: 15px; margin-bottom: 30px;">
-      <h1 style="font-size: 2rem; color: #38bdf8;" data-i18n="productTitle">كتالوج قطع الغيار والمعدات</h1>
-      <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;" data-i18n="navHome">← العودة للرئيسية</a>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 15px; margin-bottom: 30px;">
+      <h1 style="font-size: 2rem; color: #e5a93c; margin: 0;" data-i18n="productTitle">كتالوج قطع الغيار والمعدات</h1>
+      <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" data-i18n="navHome">← العودة للرئيسية</a>
     </div>
 
     <!-- شريط البحث والفلترة -->
     <div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-      <input type="text" id="catalog-search" data-i18n-placeholder="productSearchPlaceholder" placeholder="ابحث برمز OEM أو اسم القطعة..." style="padding: 10px 15px; border-radius: 6px; border: 1px solid #334155; background: #1e293b; color: #fff; width: 100%; max-width: 350px;">
       
       <div class="filter-group" style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <button data-filter="all" style="padding: 8px 12px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer;" data-i18n="allCategories">كل الفئات</button>
-        <button data-filter="axles" style="padding: 8px 12px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer;" data-i18n="axles">المحاور والتعليق</button>
-        <button data-filter="brakes" style="padding: 8px 12px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer;" data-i18n="brakes">أنظمة الفرامل</button>
-        <button data-filter="towing" style="padding: 8px 12px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer;" data-i18n="towing">السحب والاقتران</button>
-        <button data-filter="electrical" style="padding: 8px 12px; background: #334155; color: #fff; border: none; border-radius: 4px; cursor: pointer;" data-i18n="electrical">الإضاءة والكهرباء</button>
+        <button data-filter="all" data-i18n="allCategories">كل الفئات</button>
+        <button data-filter="axles" data-i18n="axles">المحاور والتعليق</button>
+        <button data-filter="brakes" data-i18n="brakes">أنظمة الفرامل</button>
+        <button data-filter="towing" data-i18n="towing">السحب والاقتران</button>
+        <button data-filter="electrical" data-i18n="electrical">الإضاءة والكهرباء</button>
       </div>
       
-      <span id="product-count" style="color: #38bdf8; font-weight: bold;"></span>
+      <span id="product-count" style="color: #e5a93c; font-weight: bold;"></span>
     </div>
 
     <!-- الشبكة الديناميكية لعرض المنتجات من script.js -->
