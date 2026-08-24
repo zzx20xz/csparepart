@@ -24,8 +24,9 @@
   <!-- شاشة الدخول -->
   <div id="login-box" class="box">
     <h2>بوابة CSP - تسجيل الدخول</h2>
+    <input type="text" id="userInput" placeholder="أدخل اسم المستخدم"><br>
     <input type="password" id="passInput" placeholder="أدخل كلمة المرور"><br>
-    <button onclick="checkPassword()">دخول</button>
+    <button onclick="checkCredentials()">دخول</button>
   </div>
 
   <!-- شاشة عرض الطلبات -->
@@ -48,42 +49,58 @@
   </div>
 
   <script>
-    // كلمة المرور الخاصة بك لدخول اللوحة
+    // بيانات الدخول المعتمدة
+    const USERNAME = "admin";
     const PASSWORD = "CSP2026";
     const SHEET_API = "https://sheetdb.io/api/v1/70c0gmppcyac8";
 
-    function checkPassword() {
-      const input = document.getElementById('passInput').value;
-      if (input === PASSWORD) {
+    function checkCredentials() {
+      const userInput = document.getElementById('userInput').value;
+      const passInput = document.getElementById('passInput').value;
+      
+      if (userInput === USERNAME && passInput === PASSWORD) {
         document.getElementById('login-box').style.display = 'none';
         document.getElementById('portal-box').style.display = 'block';
         loadOrders();
       } else {
-        alert("كلمة المرور غير صحيحة!");
+        alert("اسم المستخدم أو كلمة المرور غير صحيحة!");
       }
     }
 
     function loadOrders() {
+      const tbody = document.getElementById('orders-list');
+      tbody.innerHTML = '<tr><td colspan="4">جاري تحميل البيانات...</td></tr>';
+
       fetch(SHEET_API)
         .then(res => res.json())
         .then(data => {
-          let html = '';
           if (!data || data.length === 0) {
-            html = '<tr><td colspan="4">لا توجد طلبات حالياً</td></tr>';
-          } else {
-            data.forEach(item => {
-              html += `<tr>
-                <td>${item['الاسم'] || '-'}</td>
-                <td>${item['الهاتف'] || '-'}</td>
-                <td>${item['الطلب'] || '-'}</td>
-                <td>${item['التاريخ'] || '-'}</td>
-              </tr>`;
-            });
+            tbody.innerHTML = '<tr><td colspan="4">لا توجد طلبات حالياً</td></tr>';
+            return;
           }
-          document.getElementById('orders-list').innerHTML = html;
+
+          let html = '';
+          data.forEach(item => {
+            const keys = Object.keys(item);
+            
+            const name = item['الاسم'] || item['name'] || item['Name'] || item[keys[0]] || '-';
+            const phone = item['رقم الهاتف'] || item['الهاتف'] || item['phone'] || item['Phone'] || item[keys[1]] || '-';
+            const product = item['القطعة المطلوبة'] || item['الطلب'] || item['message'] || item['product'] || item[keys[2]] || '-';
+            const date = item['التاريخ'] || item['date'] || item['Date'] || item[keys[3]] || '-';
+
+            html += `<tr>
+              <td>${name}</td>
+              <td>${phone}</td>
+              <td>${product}</td>
+              <td>${date}</td>
+            </tr>`;
+          });
+
+          tbody.innerHTML = html;
         })
         .catch(err => {
-          document.getElementById('orders-list').innerHTML = '<tr><td colspan="4">حدث خطأ في جلب البيانات</td></tr>';
+          console.error("خطأ:", err);
+          tbody.innerHTML = '<tr><td colspan="4">حدث خطأ في جلب البيانات، تأكد من الاتصال أو رابط الـ API</td></tr>';
         });
     }
   </script>
