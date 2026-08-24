@@ -872,3 +872,9 @@ html[dir="ltr"] .whatsapp-float {
   left: auto;
   right: 25px;
 }
+/* إصلاح مشاكل الهوامش واتجاهات الشاشة عند تغيير اللغة */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
