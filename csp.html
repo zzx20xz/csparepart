@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSP - Central Spare Part Portal</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; text-align: center; }
+    .box { max-width: 750px; margin: 30px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+    h2 { color: #1a252f; margin-bottom: 20px; }
+    input { padding: 12px; font-size: 16px; margin: 10px 0; width: 80%; max-width: 300px; border: 1px solid #cccccc; border-radius: 6px; box-sizing: border-box; }
+    button { padding: 12px 24px; font-size: 16px; background: #2c3e50; color: white; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #1a252f; }
+    .btn-refresh { background: #27ae60; margin-bottom: 15px; }
+    .btn-refresh:hover { background: #219150; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #e9ecef; padding: 12px; text-align: center; font-size: 15px; }
+    th { background-color: #2c3e50; color: white; }
+    tr:nth-child(even) { background-color: #f8f9fa; }
+  </style>
+</head>
+<body>
+
+  <!-- شاشة الدخول -->
+  <div id="login-box" class="box">
+    <h2>بوابة CSP - تسجيل الدخول</h2>
+    <input type="password" id="passInput" placeholder="أدخل كلمة المرور"><br>
+    <button onclick="checkPassword()">دخول</button>
+  </div>
+
+  <!-- شاشة عرض الطلبات -->
+  <div id="portal-box" class="box" style="display: none;">
+    <h2>CSP - الطلبات الواردة</h2>
+    <button class="btn-refresh" onclick="loadOrders()">تحديث الطلبات 🔄</button>
+    <table>
+      <thead>
+        <tr>
+          <th>الاسم</th>
+          <th>رقم الهاتف</th>
+          <th>القطعة المطلوبة</th>
+          <th>التاريخ</th>
+        </tr>
+      </thead>
+      <tbody id="orders-list">
+        <tr><td colspan="4">جاري تحميل البيانات...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // كلمة المرور الخاصة بك لدخول اللوحة
+    const PASSWORD = "CSP2026";
+    const SHEET_API = "https://sheetdb.io/api/v1/70c0gmppcyac8";
+
+    function checkPassword() {
+      const input = document.getElementById('passInput').value;
+      if (input === PASSWORD) {
+        document.getElementById('login-box').style.display = 'none';
+        document.getElementById('portal-box').style.display = 'block';
+        loadOrders();
+      } else {
+        alert("كلمة المرور غير صحيحة!");
+      }
+    }
+
+    function loadOrders() {
+      fetch(SHEET_API)
+        .then(res => res.json())
+        .then(data => {
+          let html = '';
+          if (!data || data.length === 0) {
+            html = '<tr><td colspan="4">لا توجد طلبات حالياً</td></tr>';
+          } else {
+            data.forEach(item => {
+              html += `<tr>
+                <td>${item['الاسم'] || '-'}</td>
+                <td>${item['الهاتف'] || '-'}</td>
+                <td>${item['الطلب'] || '-'}</td>
+                <td>${item['التاريخ'] || '-'}</td>
+              </tr>`;
+            });
+          }
+          document.getElementById('orders-list').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('orders-list').innerHTML = '<tr><td colspan="4">حدث خطأ في جلب البيانات</td></tr>';
+        });
+    }
+  </script>
+</body>
+</html>
