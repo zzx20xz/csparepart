@@ -262,8 +262,29 @@ img {
   border-color: var(--orange);
 }
 
+/* تعديل إظهار حقل البحث */
 .catalog-search {
-  display: none !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 260px;
+}
+
+.catalog-search input {
+  width: 100%;
+  padding: 9px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.catalog-search input:focus {
+  border-color: var(--orange);
 }
 
 .results-label {
@@ -288,6 +309,9 @@ img {
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+  .catalog-search {
+    width: 100%;
   }
 }
 
@@ -816,34 +840,35 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
 /* زر الواتساب العائم */
 .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background-color: #25d366;
-    color: #fff;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background-color: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #20ba5a;
+  transform: scale(1.1);
+  background-color: #20ba5a;
 }
 
 /* تعديل مكان الزر تلقائياً حسب لغة الموقع (عربي أو إنجليزي) */
 html[dir="ltr"] .whatsapp-float {
-    left: auto;
-    right: 25px;
+  left: auto;
+  right: 25px;
 }
