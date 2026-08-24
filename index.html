@@ -16,18 +16,19 @@
 
   <body>
     <!-- زر الواتساب المباشر العائم -->
-<a href="https://wa.me/96892296766?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20قطع%20غيار%20مقطورات." class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
-    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+    <a href="https://wa.me/96892296766?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20قطع%20غيار%20مقطورات." class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+      <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-    </svg>
-</a>
-    <!-- زر تغيير اللغة العائم الشفاف -->
+      </svg>
+    </a>
+
+    <!-- زر تغيير اللغة العائم -->
     <div class="floating-lang">
-      <button id="lang-btn" class="lang-toggle">English</button>
+      <button class="lang-toggle">English</button>
     </div>
 
     <main>
-      <!-- القسم الرئيسي Hero -->
+      <!-- Hero Section -->
       <section class="hero" data-aos="fade-up" data-aos-duration="800">
         <img class="hero-video" src="cc.png" alt="Heavy Trailers Background" />
         <div class="hero-shade"></div>
@@ -49,63 +50,126 @@
         <div class="hero-index"><span>01</span><i></i><span data-i18n="heroIndex">قطع غيار مقطورات ممتازة</span></div>
       </section>
 
-      <!-- قسم من نحن والخدمات -->
+      <!-- Section 1: Services (قسم الخدمات) -->
       <section class="factory-section" id="about" data-aos="fade-up" data-aos-duration="800">
         <div class="shell factory-grid">
           <div class="factory-copy reveal" data-aos="fade-up" data-aos-duration="800">
-            <p class="section-label" data-i18n="servicesLabel">OUR SERVICES / WORKSHOPS & FLEETS</p>
-            <h2 data-i18n="servicesTitle">Our Services for <em>Workshops & Fleets.</em></h2>
-            <p data-i18n="servicesText">Practical sourcing and technical support for workshops, fleet operators, and every trailer that needs to stay moving.</p>
+            <p class="section-label" data-i18n="servicesLabel">OUR SERVICES / TRAILERS & WORKSHOPS</p>
+            <h2 data-i18n="servicesTitle">Our Services for <em>Trailers & Workshops</em></h2>
+            <p data-i18n="servicesText">Practical supply and technical support to keep your trailer moving smoothly.</p>
             <div class="services-extra-grid">
-              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceOrders">Special Orders & Imports</h3><p data-i18n="serviceOrdersDesc">Rare and special-order parts sourced for your exact requirement.</p></div>
-              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceMatching">OEM Part Matching</h3><p data-i18n="serviceMatchingDesc">Match the part number and chassis to prevent costly errors.</p></div>
-              <div class="service-card" data-aos="fade-up" data-aos-duration="800"><h3 data-i18n="serviceContracts">Fleet Supply Contracts</h3><p data-i18n="serviceContractsDesc">Scheduled supply contracts with wholesale pricing.</p></div>
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800">
+                <h3 data-i18n="serviceContracts">Periodic Supply Contracts</h3>
+                <p data-i18n="serviceContractsDesc">Competitive wholesale prices and regular parts supply for your trailer.</p>
+              </div>
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800">
+                <h3 data-i18n="serviceMatching">VIN & Part Matching</h3>
+                <p data-i18n="serviceMatchingDesc">Precise VIN matching to guarantee 100% correct part fitment.</p>
+              </div>
+              <div class="service-card" data-aos="fade-up" data-aos-duration="800">
+                <h3 data-i18n="serviceOrders">Rare Parts Sourcing</h3>
+                <p data-i18n="serviceOrdersDesc">Fast sourcing for hard-to-find and custom trailer parts.</p>
+              </div>
             </div>
             <a class="text-action" href="#contact" data-i18n="talkEngineering">Talk to our engineering team <b>→</b></a>
           </div>
         </div>
       </section>
 
-      <!-- قسم التصنيفات -->
-      <section class="categories" id="categories" data-aos="fade-up" data-aos-duration="800">
+      <!-- Section 2: Key Stats (قسم الإحصائيات والأرقام) -->
+      <section class="categories stats-section" id="stats" data-aos="fade-up" data-aos-duration="800">
         <div class="shell">
           <div class="section-head reveal" data-aos="fade-up" data-aos-duration="800">
             <div>
-              <p class="section-label" data-i18n="categoriesLabel">EXPLORE THE RANGE</p>
-              <h2 data-i18n="categoriesTitle">Every connection.<br /><em>Every kilometre.</em></h2>
+              <p class="section-label" data-i18n="statsLabel">KEY STATS & PERFORMANCE</p>
+              <h2 data-i18n="statsTitle">Numbers That Drive<br /><em>Reliability Every Kilometer</em></h2>
             </div>
-            <p data-i18n="categoriesCopy">Original-quality parts and technical guidance to keep trailers ready for the road.</p>
+            <p data-i18n="statsSub">Committed to top quality standards to ensure your trailer is always road-ready.</p>
           </div>
-          <div class="category-grid">
-            <a class="category-card tow reveal" href="products.html?category=towing" data-aos="fade-up" data-aos-duration="800"><span class="card-number">01</span><h3 data-i18n="catTowing">Towing & Coupling</h3><p data-i18n="catTowingDesc">Landing gear, kingpins & couplers</p><span class="card-arrow">←</span></a>
-            <a class="category-card axle reveal" href="products.html?category=axles" data-aos="fade-up" data-aos-duration="800"><span class="card-number">02</span><h3 data-i18n="catAxles">Axles & Suspension</h3><p data-i18n="catAxlesDesc">Axle assemblies, leaf springs & air bags</p><span class="card-arrow">←</span></a>
-            <a class="category-card brake reveal" href="products.html?category=brakes" data-aos="fade-up" data-aos-duration="800"><span class="card-number">03</span><h3 data-i18n="catBrakes">Braking Systems</h3><p data-i18n="catBrakesDesc">Drums, chambers, valves & ABS parts</p><span class="card-arrow">←</span></a>
-            <a class="category-card electrical reveal" href="products.html?category=electrical" data-aos="fade-up" data-aos-duration="800"><span class="card-number">04</span><h3 data-i18n="catElectrical">Lighting & Electrical</h3><p data-i18n="catElectricalDesc">LED lights, harnesses & plugs</p><span class="card-arrow">←</span></a>
+          <div class="category-grid stats-grid">
+            <div class="category-card stat-card reveal" data-aos="fade-up" data-aos-duration="800">
+              <span class="card-number">100%</span>
+              <h3 data-i18n="statOneTitle">OEM Compliance</h3>
+              <p data-i18n="statOneDesc">Original parts with guaranteed compatibility for your trailer.</p>
+            </div>
+            <div class="category-card stat-card reveal" data-aos="fade-up" data-aos-duration="800">
+              <span class="card-number">+5,000</span>
+              <h3 data-i18n="statTwoTitle">Spare Parts Available</h3>
+              <p data-i18n="statTwoDesc">Comprehensive range covering brakes, suspension, and electrical systems.</p>
+            </div>
+            <div class="category-card stat-card reveal" data-aos="fade-up" data-aos-duration="800">
+              <span class="card-number">24/7</span>
+              <h3 data-i18n="statThreeTitle">Technical Support</h3>
+              <p data-i18n="statThreeDesc">Expert guidance to identify the right part before purchase.</p>
+            </div>
+            <div class="category-card stat-card reveal" data-aos="fade-up" data-aos-duration="800">
+              <span class="card-number" data-i18n="statFourNumber">24 Hours</span>
+              <h3 data-i18n="statFourTitle">Fast Processing</h3>
+              <p data-i18n="statFourDesc">Immediate order handling to minimize your trailer's downtime.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- قسم لماذا تختارنا -->
+      <!-- Section 3: Why Choose Us (قسم لماذا تختارنا) -->
       <section class="advantages-section" data-aos="fade-up" data-aos-duration="800">
         <div class="shell">
-          <div class="section-head" data-aos="fade-up" data-aos-duration="800"><div><p class="section-label" data-i18n="whyLabel">WHY CHOOSE US / THE CSPAREPART DIFFERENCE</p><h2 data-i18n="whyTitle">Built around <em>your uptime.</em></h2></div></div>
+          <div class="section-head" data-aos="fade-up" data-aos-duration="800">
+            <div>
+              <p class="section-label" data-i18n="whyLabel">WHY CHOOSE US / THE CSPAREPART DIFFERENCE</p>
+              <h2 data-i18n="whyTitle">Built to Keep Your Trailer <em>Road-Ready.</em></h2>
+            </div>
+          </div>
           <div class="advantages-grid">
-            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>01</b><h3 data-i18n="whyOne">Guaranteed OEM Quality</h3><p data-i18n="whyOneDesc">Factory-specification compatibility</p></article>
-            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>02</b><h3 data-i18n="whyTwo">Wholesale Pricing</h3><p data-i18n="whyTwoDesc">Competitive prices for workshops and fleets</p></article>
-            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>03</b><h3 data-i18n="whyThree">Fast Delivery & Custom Orders</h3><p data-i18n="whyThreeDesc">Fast sourcing for special requirements</p></article>
-            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800"><b>04</b><h3 data-i18n="whyFour">Expert Technical Guidance</h3><p data-i18n="whyFourDesc">Pre-purchase compatibility support</p></article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800">
+              <b>01</b>
+              <h3 data-i18n="whyOne">Guaranteed OEM Quality</h3>
+              <p data-i18n="whyOneDesc">Parts fully matching original manufacturer specifications.</p>
+            </article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800">
+              <b>02</b>
+              <h3 data-i18n="whyTwo">Wholesale Rates</h3>
+              <p data-i18n="whyTwoDesc">Competitive pricing tailored for workshops and trailer maintenance.</p>
+            </article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800">
+              <b>03</b>
+              <h3 data-i18n="whyThree">Express Shipping</h3>
+              <p data-i18n="whyThreeDesc">Fast delivery for urgent orders to avoid costly downtime.</p>
+            </article>
+            <article class="advantage-card" data-aos="fade-up" data-aos-duration="800">
+              <b>04</b>
+              <h3 data-i18n="whyFour">Pre-Purchase Advice</h3>
+              <p data-i18n="whyFourDesc">Expert team verifying compatibility before you buy.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- قسم خطوات الطلب -->
+      <!-- Section 4: Ordering Steps (قسم خطوات الطلب) -->
       <section class="ordering-section" data-aos="fade-up" data-aos-duration="800">
         <div class="shell">
-          <div class="section-head" data-aos="fade-up" data-aos-duration="800"><div><p class="section-label" data-i18n="howLabel">HOW ORDERING WORKS / THREE SIMPLE STEPS</p><h2 data-i18n="howTitle">From part number to <em>road-ready.</em></h2></div></div>
+          <div class="section-head" data-aos="fade-up" data-aos-duration="800">
+            <div>
+              <p class="section-label" data-i18n="howLabel">HOW ORDERING WORKS / THREE SIMPLE STEPS</p>
+              <h2 data-i18n="howTitle">From Part Number to <em>the Road.</em></h2>
+            </div>
+          </div>
           <div class="ordering-grid">
-            <article class="ordering-step"><b>01</b><h3 data-i18n="howOne">Send Part Name or OEM Number</h3><p data-i18n="howOneDesc">Send the part name or OEM number</p></article>
-            <article class="ordering-step"><b>02</b><h3 data-i18n="howTwo">Get Instant Price Quote & Compatibility Check</h3><p data-i18n="howTwoDesc">Receive a quick quote and compatibility confirmation</p></article>
-            <article class="ordering-step"><b>03</b><h3 data-i18n="howThree">Fast Dispatch & Delivery Across Oman</h3><p data-i18n="howThreeDesc">Fast dispatch with delivery across Oman</p></article>
+            <article class="ordering-step">
+              <b>01</b>
+              <h3 data-i18n="howOne">Submit Part Details</h3>
+              <p data-i18n="howOneDesc">Send us the part number or your trailer's VIN.</p>
+            </article>
+            <article class="ordering-step">
+              <b>02</b>
+              <h3 data-i18n="howTwo">Quote & Compatibility</h3>
+              <p data-i18n="howTwoDesc">Get an instant quote and precise fitment verification.</p>
+            </article>
+            <article class="ordering-step">
+              <b>03</b>
+              <h3 data-i18n="howThree">Delivery & Dispatch</h3>
+              <p data-i18n="howThreeDesc">Fast shipping to get your trailer back on the road.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -147,12 +211,13 @@
         </div>
         <div>
           <div class="div">
-    <h3 data-i18n="contactLabel">LET'S KEEP YOU MOVING</h3>
-    <a href="mailto:info@csparepart.om">info@csparepart.om</a>
-    <a href="tel:+96892296766">+968 9229 6766 (CEO)</a>
-    <a href="https://maps.app.goo.gl/HnYhMqma6ww6K4hZA" target="_blank" rel="noopener">AL Buraimi, Oman</a>
-</div>
-        <small data-i18n="copyright">Copyright © 2026 Csparepart. All Rights Reserved.</small>
+            <h3 data-i18n="contactLabel">LET'S KEEP YOU MOVING</h3>
+            <a href="mailto:info@csparepart.om">info@csparepart.om</a>
+            <a href="tel:+96892296766">+968 9229 6766 (CEO)</a>
+            <a href="https://maps.app.goo.gl/HnYhMqma6ww6K4hZA" target="_blank" rel="noopener">AL Buraimi, Oman</a>
+          </div>
+          <small data-i18n="copyright">Copyright © 2026 Csparepart. All Rights Reserved.</small>
+        </div>
       </div>
     </footer>
 
