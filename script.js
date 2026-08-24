@@ -24,8 +24,8 @@ const copy = {
     talkEngineering: 'Talk to our engineering team <b>→</b>',
 
     // Section 2: Key Stats
-    statsLabel: 'KEY STATS & PERFORMANCE',
-    statsTitle: 'Numbers That Drive<br /><em>Reliability Every Kilometer</em>',
+    statsLabel: 'Reliability Standards',
+    statsTitle: 'Certified Engineering Tool for<br /><em> the Transportation Sector</em>',
     statsSub: 'Committed to top quality standards to ensure your trailer is always road-ready.',
     statOneTitle: 'OEM Compliance',
     statOneDesc: 'Original parts with guaranteed compatibility for your trailer.',
@@ -77,7 +77,7 @@ const copy = {
     formEmail: 'Email / Phone',
     formEmailPlaceholder: 'Phone number or email',
     formRequest: 'What do you need?',
-    formRequestPlaceholder: 'Part number, product or trailer requirement...',
+    formRequestPlaceholder: 'Enter the product name or requirement...',
     sendButton: 'Send Request',
     arrowDir: '→',
     footerIntro: 'Premium heavy trailer spare parts for the transport industry.',
@@ -121,8 +121,8 @@ const copy = {
     talkEngineering: 'تحدث مع فريقنا الهندسي <b>←</b>',
 
     // Section 2: Key Stats
-    statsLabel: 'إحصائيات وأرقام موثوقة',
-    statsTitle: 'أرقام تعني الاعتمادية<br /><em>في كل كيلومتر</em>',
+    statsLabel: 'معايير الاعتمادية',
+    statsTitle: 'أداء هندسي معتمد لقطاع النقل',
     statsSub: 'نلتزم بأعلى معايير الجودة لضمان جاهزية مقطورتك دائماً.',
     statOneTitle: 'مطابقة المواصفات (OEM)',
     statOneDesc: 'قطع أصلية ومضمونة التوافق التام مع مقطورتك.',
@@ -174,7 +174,7 @@ const copy = {
     formEmail: 'البريد أو الهاتف',
     formEmailPlaceholder: 'رقم الهاتف أو البريد الإلكتروني',
     formRequest: 'بماذا تحتاج؟',
-    formRequestPlaceholder: 'رقم القطعة، المنتج، أو متطلبات المقطورة...',
+    formRequestPlaceholder: 'أدخل اسم المنتج أو المتطلبات...',
     sendButton: 'إرسال الرسالة',
     arrowDir: '←',
     footerIntro: 'قطع غيار ممتازة للمقطورات الثقيلة لقطاع النقل.',
@@ -231,6 +231,20 @@ function applyLanguage(lang) {
       node.innerHTML = copy[lang][key];
     }
   });
+
+  // تحديث روابط وتفاصيل الواتساب في قسم نبقيك على الطريق بناءً على الكود المحدث
+  const contactLabelElement = document.querySelector('.contact-section p');
+  if (contactLabelElement) {
+    contactLabelElement.innerHTML = lang === 'ar' 
+      ? `<a href="https://api.whatsapp.com/send?phone=96892296766&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`
+      : `LET'S KEEP YOU MOVING - WhatsApp: <a href="https://api.whatsapp.com/send?phone=96892296766&text=Hello,%20I%20want%20to%20order%20a%20trailer%20spare%20part" target="_blank" style="color: #38bdf8; text-decoration: none;">+968 92296766</a>`;
+  }
+
+  // تحديث زر الواتساب العائم أيضاً
+  const whatsappFloat = document.querySelector('.whatsapp-float');
+  if (whatsappFloat) {
+    whatsappFloat.href = "https://api.whatsapp.com/send?phone=96892296766&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة";
+  }
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
     const key = node.dataset.i18nPlaceholder;
