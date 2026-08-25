@@ -6,13 +6,12 @@ const copy = {
     navProducts: 'Products',
     navContact: 'Contact Us',
     heroTitle: 'PREMIUM HEAVY TRAILER<br>SPARE PARTS<br><em>BUILT FOR PERFORMANCE</em>',
-    heroLead: 'High-quality heavy trailer spare parts engineered for durability, reliability, and maximum performance across every journey.',
     exploreProducts: 'Browse Products <b>→</b>',
     requestQuote: 'Request a Quote',
     heroIndex: 'PREMIUM TRAILER PARTS',
 
     // Section 1: Services
-    servicesLabel: 'OUR SERVICES / TRAILERS & WORKSHOPS',
+    servicesLabel: 'OUR SERVICES',
     servicesTitle: 'Our Services for <em>Trailers & Workshops</em>',
     servicesText: 'Practical supply and technical support to keep your trailer moving smoothly.',
     serviceContracts: 'Periodic Supply Contracts',
@@ -53,7 +52,7 @@ const copy = {
     howLabel: 'HOW ORDERING WORKS / THREE SIMPLE STEPS',
     howTitle: 'From Part Number to <em>the Road.</em>',
     howOne: 'Submit Part Details',
-    howOneDesc: "Send us the part number or your trailer's VIN.",
+    howOneDesc: "Send the product name .",
     howTwo: 'Quote & Compatibility',
     howTwoDesc: 'Get an instant quote and precise fitment verification.',
     howThree: 'Delivery & Dispatch',
@@ -92,7 +91,6 @@ const copy = {
     towing: 'Towing & Coupling',
     electrical: 'Lighting & Electrical',
     results: 'products available',
-    priceFrom: 'From',
     order: 'Order / Request Quote',
     noResults: 'No parts found. Try another code or category.'
   },
@@ -102,14 +100,13 @@ const copy = {
     navAbout: 'من نحن',
     navProducts: 'المنتجات',
     navContact: 'اتصل بنا',
-    heroTitle: 'قطع غيار متميزة<br>للمقطورات الثقيلة<br><em>مصممة لأعلى مستويات الأداء</em>',
-    heroLead: 'نوفر قطع غيار عالية الجودة للمقطورات الثقيلة، مصممة لتقديم المتانة والاعتمادية وأعلى مستويات الأداء في جميع ظروف التشغيل.',
+    heroTitle: 'خيارك الأول والموثوق<br> للحصول على قطع غيار أصلية<br><em>تضمن أقصى درجات الأداء والاستمرارية</em>',
     exploreProducts: 'تصفح المنتجات <b>←</b>',
-    requestQuote: 'اطلب عرض سعر',
+    requestQuote: 'تواصل معنا ',
     heroIndex: 'قطع غيار مقطورات ممتازة',
 
     // Section 1: Services
-    servicesLabel: 'خدماتنا لمستخدمي المقطورات والورش',
+    servicesLabel: 'خدماتنا ',
     servicesTitle: 'خدماتنا <em>لمستخدمي المقطورات والورش</em>',
     servicesText: 'توفير عملي ودعم فني متخصص لضمان بقاء مقطورتك على الطريق بدون توقف.',
     serviceContracts: 'عقود توريد دورية',
@@ -150,7 +147,7 @@ const copy = {
     howLabel: 'خطوات الطلب',
     howTitle: 'من رقم القطعة إلى <em>الطريق.</em>',
     howOne: 'إرسال بيانات القطعة',
-    howOneDesc: 'أرسل رقم القطعة أو رقم هيكل المقطورة (VIN).',
+    howOneDesc: 'أرسل اسم المنتج أو القطعة .',
     howTwo: 'تسعيرة وتأكيد التوافق',
     howTwoDesc: 'احصل على سعر فوري وتأكيد دقيق لمطابقة القطعة.',
     howThree: 'التوصيل والانطلاق',
@@ -189,7 +186,7 @@ const copy = {
     towing: 'السحب والاقتران',
     electrical: 'الإضاءة والكهرباء',
     results: 'منتجات متاحة',
-    priceFrom: 'ابتداءً من',
+  
     order: 'اطلب / اطلب عرض سعر',
     noResults: 'لم يتم العثور على قطع. جرّب رمزاً أو فئة أخرى.'
   }
@@ -198,14 +195,14 @@ const copy = {
 const SHEET_API_URL = "https://sheetdb.io/api/v1/70c0gmppcyac8";
 
 const productsList = [
-  { id: 'AX-1001', category: 'axles', price: '145', image: 'logo.png', name: { en: 'Heavy-Duty Trailer Axle', ar: 'محور مقطورة للخدمة الشاقة' } },
-  { id: 'AX-1002', category: 'axles', price: '68', image: 'logo.png', name: { en: 'Air Suspension Bag', ar: 'كيس تعليق هوائي' } },
-  { id: 'BR-2101', category: 'brakes', price: '42', image: 'logo.png', name: { en: 'Brake Drum Assembly', ar: 'تجميعة طبلة فرامل' } },
-  { id: 'BR-2102', category: 'brakes', price: '24', image: 'logo.png', name: { en: 'Brake Chamber', ar: 'غرفة فرامل' } },
-  { id: 'TW-3101', category: 'towing', price: '185', image: 'logo.png', name: { en: 'Trailer Landing Gear', ar: 'أرجل هبوط المقطورة' } },
-  { id: 'TW-3102', category: 'towing', price: '76', image: 'logo.png', name: { en: 'Kingpin Coupling Set', ar: 'طقم وصلة المسمار الملكي' } },
-  { id: 'EL-4101', category: 'electrical', price: '18', image: 'logo.png', name: { en: 'LED Trailer Rear Light', ar: 'مصباح خلفي LED للمقطورة' } },
-  { id: 'EL-4102', category: 'electrical', price: '12', image: 'logo.png', name: { en: 'Electrical Connector Plug', ar: 'قابس موصل كهربائي' } }
+  { id: 'AX-1001', category: 'axles', image: 'logo.png', name: { en: 'Heavy-Duty Trailer Axle', ar: 'محور مقطورة للخدمة الشاقة' } },
+  { id: 'AX-1002', category: 'axles', image: 'logo.png', name: { en: 'Air Suspension Bag', ar: 'كيس تعليق هوائي' } },
+  { id: 'BR-2101', category: 'brakes', image: 'logo.png', name: { en: 'Brake Drum Assembly', ar: 'تجميعة طبلة فرامل' } },
+  { id: 'BR-2102', category: 'brakes', image: 'logo.png', name: { en: 'Brake Chamber', ar: 'غرفة فرامل' } },
+  { id: 'TW-3101', category: 'towing', image: 'logo.png', name: { en: 'Trailer Landing Gear', ar: 'أرجل هبوط المقطورة' } },
+  { id: 'TW-3102', category: 'towing', image: 'logo.png', name: { en: 'Kingpin Coupling Set', ar: 'طقم وصلة المسمار الملكي' } },
+  { id: 'EL-4101', category: 'electrical', image: 'logo.png', name: { en: 'LED Trailer Rear Light', ar: 'مصباح خلفي LED للمقطورة' } },
+  { id: 'EL-4102', category: 'electrical', image: 'logo.png', name: { en: 'Electrical Connector Plug', ar: 'قابس موصل كهربائي' } }
 ];
 
 let currentLang = localStorage.getItem('csparepart-language') || 'ar';
@@ -236,14 +233,14 @@ function applyLanguage(lang) {
   const contactLabelElement = document.querySelector('.contact-section p');
   if (contactLabelElement) {
     contactLabelElement.innerHTML = lang === 'ar' 
-      ? `<a href="https://api.whatsapp.com/send?phone=96892296766&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`
-      : `LET'S KEEP YOU MOVING - WhatsApp: <a href="https://api.whatsapp.com/send?phone=96892296766&text=Hello,%20I%20want%20to%20order%20a%20trailer%20spare%20part" target="_blank" style="color: #38bdf8; text-decoration: none;">+968 92296766</a>`;
+      ? `<a href="https://api.whatsapp.com/send?phone=+968 9983 8481&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`
+      : `<a href="https://api.whatsapp.com/send?phone=+968 9983 8481&text=Hello,%20I%20want%20to%20order%20a%20trailer%20spare%20part" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`;
   }
 
   // تحديث زر الواتساب العائم أيضاً
   const whatsappFloat = document.querySelector('.whatsapp-float');
   if (whatsappFloat) {
-    whatsappFloat.href = "https://api.whatsapp.com/send?phone=96892296766&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة";
+    whatsappFloat.href = "https://api.whatsapp.com/send?phone=+968 9983 8481&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة";
   }
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
@@ -285,7 +282,7 @@ function renderProducts() {
       <h3>${item.name[currentLang]}</h3>
       <p style="color: #94a3b8; font-size: 0.85rem;">OEM / ${item.id}</p>
       <div class="product-bottom" style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px; border-top: 1px solid #334155; padding-top: 10px;">
-        <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;">${copy[currentLang].priceFrom} <b style="color: #38bdf8;">${item.price} OMR</b></p>
+        <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;"><b style="color: #38bdf8;"></b></p>
         <button class="order-button" type="button" style="background: #0284c7; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">${copy[currentLang].order}</button>
       </div>
     </article>
