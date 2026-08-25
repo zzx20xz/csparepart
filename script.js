@@ -75,7 +75,7 @@ const copy = {
     formNamePlaceholder: 'Your name or company',
     formEmail: 'Email / Phone',
     formEmailPlaceholder: 'Phone number or email',
-    formRequest: 'What do you need?',
+    formRequest: 'Part Details',
     formRequestPlaceholder: 'Enter the product name or requirement...',
     sendButton: 'Send Request',
     arrowDir: '→',
@@ -170,7 +170,7 @@ const copy = {
     formNamePlaceholder: 'اسمك أو اسم الشركة',
     formEmail: 'البريد أو الهاتف',
     formEmailPlaceholder: 'رقم الهاتف أو البريد الإلكتروني',
-    formRequest: 'بماذا تحتاج؟',
+    formRequest: 'تفاصيل الطلب أو القطعة؟',
     formRequestPlaceholder: 'أدخل اسم المنتج أو المتطلبات...',
     sendButton: 'إرسال الرسالة',
     arrowDir: '←',
@@ -233,14 +233,14 @@ function applyLanguage(lang) {
   const contactLabelElement = document.querySelector('.contact-section p');
   if (contactLabelElement) {
     contactLabelElement.innerHTML = lang === 'ar' 
-      ? `<a href="https://api.whatsapp.com/send?phone=+968 9983 8481&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`
-      : `<a href="https://api.whatsapp.com/send?phone=+968 9983 8481&text=Hello,%20I%20want%20to%20order%20a%20trailer%20spare%20part" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`;
+      ? `<a href="https://wa.me/96899838481=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`
+      : `<a href="https://wa.me/96899838481" target="_blank" style="color: #38bdf8; text-decoration: none;"></a>`;
   }
 
   // تحديث زر الواتساب العائم أيضاً
   const whatsappFloat = document.querySelector('.whatsapp-float');
   if (whatsappFloat) {
-    whatsappFloat.href = "https://api.whatsapp.com/send?phone=+968 9983 8481&text=السلام%20عليكم،%20أريد%20طلب%20قطعة%20غيار%20للمقطورة";
+    whatsappFloat.href = "https://wa.me/96899838481";
   }
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
